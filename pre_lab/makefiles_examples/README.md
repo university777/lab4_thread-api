@@ -6,7 +6,7 @@ Antes de iniciar se recomienda ver la sección **F.6 Makefiles** del capitulo [L
 
 ## Problemas propuestos
 
-1. Observe y analice el código de los programas que se encuentran en las carpetas codigo1 y código2. Obtenga el ejecutable por medio de la ejecucion de comandos manualmente. Una vez obtenido el ejecutable pruebelo y describa su funcionamiento y realice los comentarios pertinentes al código suministrado.
+1. Observe y analice el código de los programas que se encuentran en las carpetas codigo1 y código2. Obtenga el ejecutable por medio de la ejecucion de comandos manualmente. Una vez obtenido el ejecutable pruébelo y describa su funcionamiento. Luego realice los comentarios pertinentes al código suministrado.
 
 Llene en una hoja los comandos ejecutados:
 
