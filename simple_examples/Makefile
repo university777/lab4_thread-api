@@ -1,5 +1,5 @@
 FLAGS = -Wall -pthread
-INCLUDES = ../include
+INCLUDES = ./include
 
 all: t0 t1
 
