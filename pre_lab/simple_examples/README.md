@@ -6,8 +6,8 @@ Lea y saque un resumen corto a mano (maximo de una pagina) del capítulo [Concur
 
 ## Parte practica ##
 
-En el capitulo mencionado se muestran Conjunto de ejemplos simples que usan threads:
+En el capitulo mencionado se muestran un conjunto de ejemplos simples que usan threads:
 * ```t0.c```
 * ```t1.c```
 
-Cada uno de los archivos depende de los archivos cabecera que se encuentran en ./include. 
+Compilelos y ejecutelos. (**Nota**: Para compilar mas facil todo use la utilidad make) 
