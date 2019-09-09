@@ -16,14 +16,16 @@ void* worker(void* arg) {
 }
 
 int main(int argc, char *argv[]) {
-    Pthread_mutex_init(&lock, NULL);
+    //Pthread_mutex_init(&lock, NULL);
 
     pthread_t p;
     Pthread_create(&p, NULL, worker, NULL);
 
-    Pthread_mutex_lock(&lock);
+    //Pthread_mutex_lock(&lock);
     balance++; // unprotected access
-    Pthread_mutex_unlock(&lock);
+    //Pthread_mutex_unlock(&lock);
+
+    printf("El valor del contador es: %d \n", balance);
 
     Pthread_join(p, NULL);
     return 0;
