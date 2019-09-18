@@ -10,9 +10,9 @@ En esta sección escribiremos algunos programas multi-hilo y usaremos una herram
 
 2. ¿Qué ocurre cuando usted elimina una de las líneas que generan problemas en el código? Ahora agrege un lock alrededor de las actualizaciones de la variable compartida, y entonces alrededor de ambas. ¿Qué reporta ```helgrind``` en cada uno de estos casos?  
 > ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_Con1Lock.png)  
-[alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_Con2Locks.png)  
-[alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_ConLineaComentada.png)
-[alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_SinLocks.png)
+![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_Con2Locks.png)  
+![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_ConLineaComentada.png)
+![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_SinLocks.png)
  
 
 > Al comentar una de las líneas con la race condición y correr nuevamente el comando de valgrind, tenemos que ahora solamente hay un error en nuestro código. Por otro lado, si rodeamos la sección crítica del hilo principal que accede a la variable 'balance' con un lock que previamente habiamos inicializado y corremos helgrind, este nos muestra que nuestro código tiene 3 errores.
@@ -23,14 +23,14 @@ En esta sección escribiremos algunos programas multi-hilo y usaremos una herram
 > En este código se da la condición hold and wait que es uno de las condiciones para que exista un deadlock.
 
 4. Ahora ejecute ```helgrind``` en este código. ¿Qué reporta helgrind?  
-> [alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto4_Deadlock.png)
-[alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto4_Deadlock2.png)  
+> ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto4_Deadlock.png)
+![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto4_Deadlock2.png)  
 
 5. Ahora ejecute ```helgrind``` en ```main-deadlock-global.c```. Examine el código. ¿Tiene este el mismo problema que ```main-deadlock.c```? ¿Muestra ```helgrind``` el mismo reporte de error? ¿Qué dice esto a cerca de herramientas como ```helgrind```?  
-> [alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto5_Deadlock-Global.png)  
+> ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto5_Deadlock-Global.png)  
 
 6. Ahora observe ```main-signal.c```. Este código usa una variable (```done```) para señalar que el hijo esta hecho y que el padre puede continuar. ¿Por qué este códido es ineficiente? (En que termina el padre dedicando su tiempo, si el hijo toma una gran cantidad de tiempo en completarse).  
 
 7. Ahora ejecute ```helgrind``` para este programa. ¿Qué reporta helgrind?, ¿Es correcto el código?  
-> [alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto7_Hengrid_Deadlock.png)
-> [alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto7_Hengrid_Deadlock2.png)
+> ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto7_Hengrid_Deadlock.png)
+> ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto7_Hengrid_Deadlock2.png)
