@@ -6,7 +6,9 @@ En esta sección escribiremos algunos programas multi-hilo y usaremos una herram
 
 1. Primero codifique ```main-race.c```. Examine el código de manera que usted pueda ver (ojalá de manera obvia) un data race en el código. Ahora ejecute ```helgrind``` (al teclear ```valgrind --tool=helgrind main-race```) y vea como este programa reporta los *data races*. ¿Se muestran las líneas de código involucradas?, ¿Qué otra información entrega este programa?
 
-> Al compilar mediante gcc el archivo main-race.c, usando el comando gcc main-race.c -o main-race -lpthread, luego corrimos el valgrind mediante el comando en consola: valgrind --tool=helgrind main-race. Éste nos arrojó 2 errores en el código ya que se da una condición de carrera (algo esperado ya que teniamos las dos secciones criticas desprotegidas).Con valgrind podemos ver la dirección de memoria en la cual se da la condición de carrera, así como el nombre de los hilos que causan esta condición. Valgrind también especifica que no se está usando ningún lock mediante el mensaje ```locks held: none```
+> Compilamos mediante gcc el archivo main-race.c, usando el comando gcc main-race.c -o main-race -lpthread, luego corrimos el valgrind mediante el comando en consola: valgrind --tool=helgrind main-race. Éste nos arrojó 2 errores en el código ya que se da una condición de carrera (algo esperado ya que teniamos las dos secciones criticas desprotegidas).Con valgrind podemos ver la dirección de memoria en la cual se da la condición de carrera, así como el nombre de los hilos que causan esta condición. Valgrind también especifica que no se está usando ningún lock mediante el mensaje ```locks held: none```  
+
+![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto1.png) 
 
 2. ¿Qué ocurre cuando usted elimina una de las líneas que generan problemas en el código? Ahora agrege un lock alrededor de las actualizaciones de la variable compartida, y entonces alrededor de ambas. ¿Qué reporta ```helgrind``` en cada uno de estos casos?  
 > ![alt tag](https://github.com/university777/lab4_thread-api/blob/master/lab/Punto2_Con1Lock.png)  
